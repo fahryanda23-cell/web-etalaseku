@@ -1,0 +1,6 @@
+{
+  "name": "EtalaseKu - Katalog Produk Toko",
+  "description": "Aplikasi etalase dan katalog produk toko modern dengan sistem keranjang belanja dan pemesanan WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

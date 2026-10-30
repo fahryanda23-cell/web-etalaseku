@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Item produk barang yang ditampilkan di etalase toko",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 100 },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "sku": { "type": "string", "maxLength": 50 },
+        "imageUrl": { "type": "string", "maxLength": 2000000 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "features": { "type": "array" },
+        "isFeatured": { "type": "boolean" },
+        "unit": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "name", "category", "price", "stock", "sku"]
+    },
+    "StoreProfile": {
+      "title": "StoreProfile",
+      "description": "Informasi profil dan pengaturan kontak toko",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 150 },
+        "tagline": { "type": "string", "maxLength": 250 },
+        "whatsapp": { "type": "string", "maxLength": 30 },
+        "location": { "type": "string", "maxLength": 300 },
+        "workingHours": { "type": "string", "maxLength": 150 },
+        "announcement": { "type": "string", "maxLength": 300 },
+        "bankInfo": { "type": "string", "maxLength": 300 },
+        "adminPin": { "type": "string", "maxLength": 20 }
+      },
+      "required": ["name", "whatsapp"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Koleksi barang yang dipublikasikan di etalase toko untuk dilihat dan dibeli oleh pengunjung"
+    },
+    "/store/profile": {
+      "schema": "StoreProfile",
+      "description": "Data profil identitas dan konfigurasi toko publik"
+    }
+  }
+}
